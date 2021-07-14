@@ -37,11 +37,16 @@ export function TaskList() {
 
   function handleToggleTaskCompletion(id: number) {
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
+
+    //VERIFICANDO SE A O ID DA TASK É O MESMO QUE O ID SELECIONADO  
+    //SE FOR IGUAL, ENTÃO ELE PEGA TODAS AS CONFIGURAÇÕES ANTERIORES USANDO ...TASK
+    //E SE ALTERA O ISCOMPLETE PARA QUE ELE SEJA DIFERENTE DO ESTADO INICIAL.  
     const newTask = tasks.map(task => task.id === id ? {
       ...task,
       isComplete: !task.isComplete
     }: task );
 
+    //ATUALIZA O ESTADO NOVO EM NEWTASK.
     setTasks(newTask)
 
   }
